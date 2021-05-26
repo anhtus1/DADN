@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 // chặn người dùng chuyển trang trên thanh URL
 import AuthenticatedRoute from './AuthenticatedRoute.jsx'
 import LoginComponent from './LoginComponent.jsx';
@@ -21,6 +21,7 @@ class HomeApp extends Component {
                     <Switch>   {/*  hiển thị chỉ duy nhất một trong các đường dẫn */}
                         <Route path='/' exact component={LoginComponent}/>
                         <Route path='/login' component={LoginComponent}/>
+                        {/* khi gọi WelcomeComponent sẽ truyền name vào props */}
                         <AuthenticatedRoute path="/welcome/:name" component={WelcomeComponent}/>
                         <AuthenticatedRoute path="/devices/:id" component={DeviceComponent}/>
                         <AuthenticatedRoute path="/devices" component={ListDevicesComponent}/>

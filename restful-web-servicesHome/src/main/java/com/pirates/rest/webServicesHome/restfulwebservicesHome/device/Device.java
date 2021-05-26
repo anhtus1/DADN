@@ -60,6 +60,11 @@ public class Device {
 		this.humidity = humidity;
 	}
 
+	
+	
+	
+	
+	// dùng để so sánh 2 đối tượng bằng nhau không
 	@Override
 	public int hashCode() {
 		final int prime = 31;

@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+
+// dùng các api dưới đây để gọi backend
 class DeviceDataService {
     retrieveAllDevices(name) {
         //console.log('executed service')

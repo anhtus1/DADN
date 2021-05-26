@@ -39,6 +39,8 @@ class DeviceComponent extends Component {
              }))
     }
 
+
+    // check người dùng update đúng quy tắc ko
     validate(values) {
         let errors = {}
         if(!values.device) {

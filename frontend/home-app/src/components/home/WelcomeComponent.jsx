@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+// dùng Link để chuyển component không phải load lại toàn bộ trang web
 import {Link} from 'react-router-dom'
 // {this.props.match.params.name} tương đương name trên URL
 import HelloWorldService from '../../api/device/HelloWorldService.js'
@@ -44,7 +45,9 @@ class WelcomeComponent extends Component {
 
 
         HelloWorldService.executeHelloWorldPathVariableService(this.props.match.params.name)
+        //thành công
         .then(response => this.handleSuccessfulResponse(response))
+        //thất bại
         .catch(error => this.handleError(error))
     }
 
