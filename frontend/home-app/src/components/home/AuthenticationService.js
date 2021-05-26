@@ -1,3 +1,5 @@
+
+// lấy thông tin đăng nhập của người dùng
 class AuthenticationService {
     registerSuccessfulLogin(username,password){
         console.log('registerSuccessfulLogin')

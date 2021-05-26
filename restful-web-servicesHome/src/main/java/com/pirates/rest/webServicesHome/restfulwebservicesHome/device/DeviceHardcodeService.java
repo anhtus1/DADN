@@ -1,3 +1,4 @@
+// tạo data mẫu + tạo method
 package com.pirates.rest.webServicesHome.restfulwebservicesHome.device;
 
 import java.util.ArrayList;

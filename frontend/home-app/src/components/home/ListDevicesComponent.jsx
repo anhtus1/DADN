@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import DeviceDataService from '../../api/device/DeviceDataService.js'
 import AuthenticationService from './AuthenticationService.js'
-import moment from 'moment'
 
 
 class ListDevicesComponent extends Component {
@@ -27,8 +26,12 @@ class ListDevicesComponent extends Component {
     //     return true
     // }
 
+    
+    // khi truy cập một trang web thì nó sẽ render constructor trước rồi mới gọi hàm componentDidmount
+    // rồi mới render lại
     componentDidMount() {
         console.log("componentDidMount")
+        // load lại list component khi update Device
         this.refreshDevices()
         console.log(this.state)
     }
@@ -37,7 +40,7 @@ class ListDevicesComponent extends Component {
         // lấy name ở AuthenticationService
         let username = AuthenticationService.getLoggedInUserName()
 
-        // lấy dữ liệu từ back end
+        // lấy dữ liệu từ back end để load lại trang chứ không lấy ở frontend
         DeviceDataService.retrieveAllDevices(username)
         .then(
             response => {
@@ -66,17 +69,6 @@ class ListDevicesComponent extends Component {
     updateDeviceClicked(id) {
         console.log("update " + id )
         this.props.history.push(`/devices/${id}`) //URL có tên người dùng
-        // let username = AuthenticationService.getLoggedInUserName()
-        // //console.log(id + " " + username)
-        // DeviceDataService.deleteDevice(username, id)
-        // .then (
-        //     // khi xóa thành công thì thông báo
-        //     response => {
-        //         this.setState({message: `Delete of device ${id} Successful`})
-        //         // khi xóa thành công sẽ gọi lại backend để cập nhật
-        //         this.refreshDevices()
-        //     }
-        // )
     }
 
     addDeviceClicked() {
