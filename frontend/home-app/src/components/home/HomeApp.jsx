@@ -9,6 +9,7 @@ import WelcomeComponent from './WelcomeComponent.jsx';
 import HeaderComponent from './HeaderComponent.jsx';
 import FooterComponent from './FooterComponent.jsx';
 import ErrorComponent from './ErrorComponent.jsx';
+import DeviceComponent from './DeviceComponent.jsx';
 
 
 class HomeApp extends Component {
@@ -21,6 +22,7 @@ class HomeApp extends Component {
                         <Route path='/' exact component={LoginComponent}/>
                         <Route path='/login' component={LoginComponent}/>
                         <AuthenticatedRoute path="/welcome/:name" component={WelcomeComponent}/>
+                        <AuthenticatedRoute path="/devices/:id" component={DeviceComponent}/>
                         <AuthenticatedRoute path="/devices" component={ListDevicesComponent}/>
                         <AuthenticatedRoute path="/logout" component={LogoutComponent}/>
                         <Route component={ErrorComponent}/>
